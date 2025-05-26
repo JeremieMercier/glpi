@@ -2314,6 +2314,9 @@ TWIG, ['msg' => __('Your planning')]);
                     if ($parts) {
                         $vevent['RRULE'] = implode(';', $parts);
                     }
+                } else {
+                    // if no rrule, unset RRULE
+                    unset($vevent['RRULE']);
                 }
                 
                 $vcalendar->add('VEVENT', $vevent);
